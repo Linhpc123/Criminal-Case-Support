@@ -350,7 +350,7 @@ content += `
     `;
 
 });
-
+ 
   const collapsible = `<div class="collapsible">
           <div class="collapsible-header">
             <h3 class="collapsible-title">Cấp độ ${index + 1}</h3>
