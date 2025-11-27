@@ -198,24 +198,24 @@ function addRule(rule) {
         militaryState = false;
         return;
       }
-      let updatedItem16 = {};
+      let updatedItem18 = {};
       if (militaryState) {
-        updatedItem16 = {
+        updatedItem18 = {
           ...specialItem,
           name: "Sử dụng vũ khí nóng nơi công cộng(Có giấy NVQS)",
           point: 30,
         };
         currAddedItems = currAddedItems.map((item) =>
-          item.id === "18" ? updatedItem16 : item
+          item.id === "18" ? updatedItem18 : item
         );
       } else {
-        updatedItem16 = {
+        updatedItem18 = {
           ...specialItem,
           name: "Combo Súng",
           point: 90,
         };
         currAddedItems = currAddedItems.map((item) =>
-          item.id === "19" ? updatedItem16 : item
+          item.id === "19" ? updatedItem18 : item
         );
       }
 
@@ -227,6 +227,16 @@ function addRule(rule) {
       newItem = {
         id: "weapons",
         name: "Tàng trữ vũ khí nóng trái phép",
+        quantity: 1,
+        isSelected: true,
+        point: 30,
+        type: 0,
+      };
+      break;
+      case "useweapons":
+      newItem = {
+        id: "useweapons",
+        name: "Sử dụng vũ khí nóng nơi công cộng (KTNVQS + 60p)",
         quantity: 1,
         isSelected: true,
         point: 30,
@@ -309,33 +319,34 @@ document.addEventListener("DOMContentLoaded", () => {
 // render logic
 
 data.forEach((type, index) => {
-  let content = "";
-  type.forEach((item) => {
-    content += `
-            <tr>
-                <td>${item.name}</td>
-                <td>
-                    <div class="number-checkbox">
-                        ${
-                          item?.changeable
-                            ? `<input
-                              type="number"
-                              value="${item.quantity}"
-                              min="1"
-                              max="5"
-                              style="width: 48px; height: 32px"
-                              onchange="increase('${item.id}', this.value)"
-                            />`
-                            : ""
-                        }
-                        <input type="checkbox" onclick="addOffense('${
-                          item.id
-                        }')"/>
-                    </div>
-                </td>
-            </tr>
-        `;
-  });
+let content = "";
+type.forEach((item) => {
+// Nếu là truyna.html thì bỏ qua id 15,16,17
+if (window.location.pathname.endsWith("truyna.html") && ["15", "16", "17", "18", "19"].includes(item.id)) return;
+
+content += `
+        <tr>
+            <td>${item.name}</td>
+            <td>
+                <div class="number-checkbox">
+                    ${
+                      item?.changeable
+                        ? `<input
+                          type="number"
+                          value="${item.quantity}"
+                          min="1"
+                          max="5"
+                          style="width: 48px; height: 32px"
+                          onchange="increase('${item.id}', this.value)"`
+                        : ""
+                    }
+                    <input type="checkbox" onclick="addOffense('${item.id}')"/>
+                </div>
+            </td>
+        </tr>
+    `;
+
+});
 
   const collapsible = `<div class="collapsible">
           <div class="collapsible-header">
