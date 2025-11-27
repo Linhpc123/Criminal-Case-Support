@@ -70,14 +70,13 @@ header .user-avatar {
   padding: 20px;
 }
 
-/* Layout 2 cột cho các cấp độ */
 .row {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 cột /
-  gap: 15px; / khoảng cách giữa các khối /
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 15px; 
 }
 
-/ chỉnh lại width collapsible cho phù hợp */
+
 .collapsible {
   width: 100%;
 }
@@ -324,4 +323,5 @@ header .user-avatar {
   align-items: center;
   gap: 5px;
 }
+
 
