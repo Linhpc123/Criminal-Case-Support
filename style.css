@@ -34,7 +34,7 @@ header .logo-container {
 header .logo {
   width: 40px;
   height: 40px;
-  background: url('https://www.bing.com/images/search?view=detailV2&ccid=MiaUiExr&id=AD55DA2E7D7D83F2598B72DAEE7F1FDAAE22E456&thid=OIP.MiaUiExrXUURu0p0bnaTxgAAAA&mediaurl=https%3A%2F%2Fmir-s3-cdn-cf.behance.net%2Fprojects%2F404%2F50da01139389853.Y3JvcCw5OTksNzgyLDAsMTA4.png&cdnurl=https%3A%2F%2Fth.bing.com%2Fth%2Fid%2FR.322694884c6b5d4511bb4a746e7693c6%3Frik%3DVuQirtoff%252b7acg%26pid%3DImgRaw%26r%3D0&exph=316&expw=404&q=h%C3%ACnh+logo+lspd&form=IRPRST&ck=3D3BFD83FABD369F2A543FAA05CC0A31&selectedindex=4&itb=0&cw=1375&ch=664&ajaxhist=0&ajaxserp=0&vt=0&sim=11') center/cover no-repeat;
+  background: url('https://tse1.mm.bing.net/th/id/OIP.iRirDVJcyFsJ3CElEhjDJgHaHa?rs=1&pid=ImgDetMain&o=7&rm=3') center/cover no-repeat;
   border-radius: 50%;
   margin-right: 10px;
   border: 2px solid #fbc531; /* vàng badge */
@@ -73,17 +73,13 @@ header .user-avatar {
 /* Layout 2 cột cho các cấp độ */
 .row {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* 2 cột bằng nhau */
-  gap: 20px;
-  margin-top: 20px;
+  grid-template-columns: repeat(3, 1fr); /* 3 cột /
+  gap: 15px; / khoảng cách giữa các khối /
 }
 
-/* Style của từng collapsible tương thích dạng cột */
+/ chỉnh lại width collapsible cho phù hợp */
 .collapsible {
-  background-color: #ffffff;
-  border: 1px solid #0a3d62;
-  border-radius: 6px;
-  overflow: hidden;
+  width: 100%;
 }
 
 /* Header giống ảnh: màu xám nhạt, chữ đen */
@@ -328,3 +324,4 @@ header .user-avatar {
   align-items: center;
   gap: 5px;
 }
+
