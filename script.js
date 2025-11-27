@@ -321,9 +321,11 @@ document.addEventListener("DOMContentLoaded", () => {
 data.forEach((type, index) => {
 let content = "";
 type.forEach((item) => {
-// Nếu là truyna.html thì bỏ qua id 15,16,17
-if (window.location.pathname.endsWith("truyna.html") && ["15", "16", "17", "18", "19"].includes(item.id)) || item.type === 1 || item.type === 2)
-)return;
+// Nếu là truyna.html thì bỏ qua id 15,16,17 và cả type 1, type 2
+if (
+window.location.pathname.endsWith("truyna.html") &&
+(["15", "16", "17", "18","19"].includes(item.id) || item.type === 1 || item.type === 2)
+) return;
 
 content += `
         <tr>
@@ -382,6 +384,7 @@ content += `
 
   row.innerHTML += collapsible;
 });
+
 
 
 
