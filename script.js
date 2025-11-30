@@ -65,21 +65,23 @@ function render() {
 }
 
 function rendermoney() {
-  // Lấy các item đang chọn
   const selectedTypes = currAddedItems.map(item => item.type);
 
-  // Kiểm tra xem có loại nào thuộc type1-2
   const hasType1or2 = selectedTypes.some(t => t === 1 || t === 2);
-  // Kiểm tra xem có loại nào thuộc type3-6
   const hasType3to6 = selectedTypes.some(t => t >= 3 && t <= 6);
 
   if (hasType1or2) {
-    document.querySelector("#money").innerHTML = charges * 3 + ".000$";
+    money = charges * 3 + ".000$";   // <<< THÊM DÒNG NÀY
+    document.querySelector("#money").innerHTML = money;
     document.querySelector("#offenses").innerHTML = printOffense();
+
   } else if (hasType3to6) {
-    document.querySelector("#money").innerHTML = "Văn Bản Kỷ Luật";
+    money = "Văn Bản Kỷ Luật";        // <<< THÊM DÒNG NÀY
+    document.querySelector("#money").innerHTML = money;
     document.querySelector("#offenses").innerHTML = "Văn Bản Kỷ Luật";
+
   } else {
+    money = "";                       // <<< THÊM DÒNG NÀY
     document.querySelector("#money").innerHTML = "";
     document.querySelector("#offenses").innerHTML = "";
   }
@@ -384,4 +386,5 @@ content += `
 
   row.innerHTML += collapsible;
 });
+
 
