@@ -130,8 +130,9 @@ function getName() {
 }
 
 function getCccd() {
-  id = document.querySelector("#cccd").value;
-  document.querySelector("#cccd-value").innerHTML = id;
+  id = document.querySelector("#cccd").value.trim();
+  const finalCccd = id === "" ? "Không rõ" : id;
+  document.querySelector("#cccd-value").innerHTML = finalCccd;
 }
 
 function increase(id, value) {
@@ -386,6 +387,7 @@ content += `
 
   row.innerHTML += collapsible;
 });
+
 
 
 
