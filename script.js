@@ -9,7 +9,7 @@ const data = [type1, type2, type3, type4, type5, type6];
 let nameps = "";
 let nameg = "";
 let name = "";
-let id = "";
+let id = "Không Rõ";
 let offenses = [];
 let charges = 0;
 let money = 0;
@@ -386,5 +386,6 @@ content += `
 
   row.innerHTML += collapsible;
 });
+
 
 
