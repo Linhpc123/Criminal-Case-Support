@@ -9,7 +9,7 @@ const data = [type1, type2, type3, type4, type5, type6];
 let nameps = "";
 let nameg = "";
 let name = "";
-let id = "Không Rõ";
+let id = "";
 let offenses = [];
 let charges = 0;
 let money = 0;
@@ -159,7 +159,7 @@ function copyOffenses() {
     "Tên: " +
     name +
     "\n" +
-    "CCCD: " +
+    (id.trim() === "" ? "Không rõ" : id) +
     id +
     "\n" +
     "Tội danh: " +
@@ -386,6 +386,7 @@ content += `
 
   row.innerHTML += collapsible;
 });
+
 
 
 
