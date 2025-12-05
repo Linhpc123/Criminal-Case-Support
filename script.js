@@ -160,7 +160,7 @@ function copyOffenses() {
     "Tên: " +
     name +
     "\n" +
-    (id.trim() === "" ? "Không rõ" : id) +
+    "CCCD: " +
     id +
     "\n" +
     "Tội danh: " +
@@ -387,6 +387,7 @@ content += `
 
   row.innerHTML += collapsible;
 });
+
 
 
 
